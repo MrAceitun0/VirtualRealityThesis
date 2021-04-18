@@ -1,18 +1,22 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject fishSpine;
+    public GameObject cookedFish;
+
+    public Camera cam;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (GetComponent<XRGrabInteractable>().isSelected && Vector3.Distance(cam.transform.position, transform.position) < 0.3f)
+        {
+            fishSpine.SetActive(true);
+            cookedFish.SetActive(false);
+        }
     }
 }
