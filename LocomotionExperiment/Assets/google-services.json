@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1003867555566",
+    "firebase_url": "https://vrthesisdb-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "vrthesisdb",
+    "storage_bucket": "vrthesisdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1003867555566:android:94e1c3be94d0649f0115ff",
+        "android_client_info": {
+          "package_name": "com.aceitunodev.vikings"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1003867555566-h12rgbib03naon43iqvagd1p097j0f9n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmQRBo6SO6TUbr--0IrgjDKq9fhRWI4iE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1003867555566-h12rgbib03naon43iqvagd1p097j0f9n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

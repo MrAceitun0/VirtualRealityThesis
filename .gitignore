@@ -9,6 +9,7 @@
 [Bb]uilds/
 [Ll]ogs/
 [Mm]emoryCaptures/
+[Aa]ssets/"Editor Default Resources"/Firebase/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -58,3 +59,61 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+*.meta
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_analytics.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_analytics_dark.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_auth.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_auth_dark.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_cloud_messaging.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_cloud_messaging_dark.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_config.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_config_dark.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_crashlytics.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_crashlytics_dark.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_database.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_database_dark.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_dynamic_links.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_dynamic_links_dark.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_functions.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_functions_dark.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_storage.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/fb_storage_dark.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/firebase_lockup.png
+LocomotionExperiment/Assets/Editor Default Resources/Firebase/firebase_lockup_dark.png
+LocomotionExperiment/Assets/Firebase/Plugins/x86_64/FirebaseCppDatabase.so
+LocomotionExperiment/Assets/Firebase/Plugins/x86_64/FirebaseCppDatabase.dll
+LocomotionExperiment/Assets/Firebase/Plugins/x86_64/FirebaseCppDatabase.bundle
+LocomotionExperiment/Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.so
+LocomotionExperiment/Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.dll
+LocomotionExperiment/Assets/Firebase/Plugins/x86_64/FirebaseCppAuth.bundle
+LocomotionExperiment/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_1_0.so
+LocomotionExperiment/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_1_0.dll
+LocomotionExperiment/Assets/Firebase/Plugins/x86_64/FirebaseCppApp-7_1_0.bundle
+LocomotionExperiment/Assets/Firebase/Plugins/iOS/Firebase.Database.dll
+LocomotionExperiment/Assets/Firebase/Plugins/iOS/Firebase.Auth.dll
+LocomotionExperiment/Assets/Firebase/Plugins/iOS/Firebase.App.dll
+LocomotionExperiment/Assets/Firebase/Plugins/Google.MiniJson.dll
+LocomotionExperiment/Assets/Firebase/Plugins/Firebase.TaskExtension.dll
+LocomotionExperiment/Assets/Firebase/Plugins/Firebase.Platform.dll
+LocomotionExperiment/Assets/Firebase/Plugins/Firebase.Database.dll
+LocomotionExperiment/Assets/Firebase/Plugins/Firebase.Auth.dll
+LocomotionExperiment/Assets/Firebase/Plugins/Firebase.App.dll
+LocomotionExperiment/Assets/Firebase/m2repository/com/google/firebase/firebase-database-unity/maven-metadata.xml
+LocomotionExperiment/Assets/Firebase/m2repository/com/google/firebase/firebase-database-unity/7.1.0/firebase-database-unity-7.1.0.srcaar
+LocomotionExperiment/Assets/Firebase/m2repository/com/google/firebase/firebase-database-unity/7.1.0/firebase-database-unity-7.1.0.pom
+LocomotionExperiment/Assets/Firebase/m2repository/com/google/firebase/firebase-auth-unity/maven-metadata.xml
+LocomotionExperiment/Assets/Firebase/m2repository/com/google/firebase/firebase-auth-unity/7.1.0/firebase-auth-unity-7.1.0.srcaar
+LocomotionExperiment/Assets/Firebase/m2repository/com/google/firebase/firebase-auth-unity/7.1.0/firebase-auth-unity-7.1.0.pom
+LocomotionExperiment/Assets/Firebase/m2repository/com/google/firebase/firebase-app-unity/maven-metadata.xml
+LocomotionExperiment/Assets/Firebase/m2repository/com/google/firebase/firebase-app-unity/7.1.0/firebase-app-unity-7.1.0.srcaar
+LocomotionExperiment/Assets/Firebase/m2repository/com/google/firebase/firebase-app-unity/7.1.0/firebase-app-unity-7.1.0.pom
+LocomotionExperiment/Assets/Firebase/Editor/network_request.py
+LocomotionExperiment/Assets/Firebase/Editor/network_request.exe
+LocomotionExperiment/Assets/Firebase/Editor/generate_xml_from_google_services_json.py
+LocomotionExperiment/Assets/Firebase/Editor/generate_xml_from_google_services_json.exe
+LocomotionExperiment/Assets/Firebase/Editor/FirebaseDatabase_version-7.1.0_manifest.txt
+LocomotionExperiment/Assets/Firebase/Editor/FirebaseAuth_version-7.1.0_manifest.txt
+LocomotionExperiment/Assets/Firebase/Editor/Firebase.Editor.dll
+LocomotionExperiment/Assets/Firebase/Editor/DatabaseDependencies.xml
+LocomotionExperiment/Assets/Firebase/Editor/AuthDependencies.xml
+LocomotionExperiment/Assets/Firebase/Editor/AppDependencies.xml

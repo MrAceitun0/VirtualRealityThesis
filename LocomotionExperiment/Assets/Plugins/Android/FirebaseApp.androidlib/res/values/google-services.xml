@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id" xmlns:tools="http://schemas.android.com/tools">
+  <string name="firebase_database_url" translatable="false">https://vrthesisdb-default-rtdb.europe-west1.firebasedatabase.app</string>
+  <string name="gcm_defaultSenderId" translatable="false">1003867555566</string>
+  <string name="google_storage_bucket" translatable="false">vrthesisdb.appspot.com</string>
+  <string name="project_id" translatable="false">vrthesisdb</string>
+  <string name="google_api_key" translatable="false">AIzaSyCmQRBo6SO6TUbr--0IrgjDKq9fhRWI4iE</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCmQRBo6SO6TUbr--0IrgjDKq9fhRWI4iE</string>
+  <string name="google_app_id" translatable="false">1:1003867555566:android:94e1c3be94d0649f0115ff</string>
+  <string name="default_web_client_id" translatable="false">1003867555566-h12rgbib03naon43iqvagd1p097j0f9n.apps.googleusercontent.com</string>
+</resources>
