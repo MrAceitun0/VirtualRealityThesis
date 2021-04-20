@@ -6,8 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: aadbd998d63a2554688b095a3cf15d3b
+  - enabled: 1
     path: Assets/Scenes/TObjects.unity
     guid: 6165587ac122d2748a76c8c88d56d01d
+  - enabled: 1
+    path: Assets/Scenes/TTP.unity
+    guid: eff2eb07ef0ae9744976c56f973bdf27
+  - enabled: 1
+    path: Assets/Scenes/TWalk.unity
+    guid: 5c390bac400d56448b0cdfbc55c66d0c
+  - enabled: 1
+    path: Assets/Scenes/TFree.unity
+    guid: f5e524ed67c37e742b244a5d39d16432
+  - enabled: 1
+    path: Assets/Scenes/Calm.unity
+    guid: 14b243b32c86c8e458410aac8afe5bf0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
