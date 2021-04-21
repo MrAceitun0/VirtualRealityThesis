@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Calavera
   - Diana
+  - Gold
   layers:
   - Default
   - TransparentFX

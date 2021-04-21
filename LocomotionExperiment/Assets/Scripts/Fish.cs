@@ -17,6 +17,7 @@ public class Fish : MonoBehaviour
         {
             fishSpine.SetActive(true);
             cookedFish.SetActive(false);
+            this.gameObject.GetComponent<AudioSource>().Play();
         }
     }
 }
