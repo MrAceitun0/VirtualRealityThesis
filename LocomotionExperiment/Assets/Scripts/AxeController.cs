@@ -18,7 +18,7 @@ public class AxeController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Wood" && canHit > 1f)
+        if(other.tag == "Wood" && canHit > 0.5f)
         {
             audioSource.Play();
             health--;

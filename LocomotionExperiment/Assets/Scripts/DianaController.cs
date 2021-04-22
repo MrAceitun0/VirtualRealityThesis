@@ -23,7 +23,6 @@ public class DianaController : MonoBehaviour
         {
             other.GetComponent<AudioSource>().Play();
             other.GetComponent<ParticleSystem>().Play();
-            Destroy(this.gameObject, 2f);
         }
     }
 }

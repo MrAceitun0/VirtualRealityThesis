@@ -34,9 +34,8 @@ public class GoldController : MonoBehaviour
             {
                 goldC.material = opaqueMaterial;
             }
+            other.GetComponent<AudioSource>().Play();
+            Destroy(this.gameObject);
         }
-
-        other.GetComponent<AudioSource>().Play();
-        Destroy(this.gameObject);
     }
 }
