@@ -8,6 +8,9 @@ TagManager:
   - Gold
   - Chest
   - Wood
+  - Start
+  - End
+  - Confetti
   layers:
   - Default
   - TransparentFX
