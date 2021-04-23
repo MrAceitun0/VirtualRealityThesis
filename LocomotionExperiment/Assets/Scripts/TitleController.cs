@@ -21,8 +21,8 @@ public class TitleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("startAnimation", 20f);
-        Invoke("enableConnect", 24f);
+        Invoke("startAnimation", 38f);
+        Invoke("enableConnect", 42f);
 
         rightHand = InputDevices.GetDeviceAtXRNode(rightHandNode);
         leftHand = InputDevices.GetDeviceAtXRNode(leftHandNode);
