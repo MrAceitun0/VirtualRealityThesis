@@ -8,31 +8,42 @@ using Firebase;
 
 public class FirebaseManager : MonoBehaviour
 {
+    public static FirebaseManager instance;
 
     DatabaseReference mDatabaseRef;
 
     public string playerId;
 
     public float gameplayTime = 0f;
-    private int totalSnap;
-    private int totalTeleport;
-    private float totalFree;
-    private float percentageFree;
-    private float totalWalk;
-    private float percentageWalk;
-    private List<LocomotionAction> actions;
+    public int totalSnap;
+    public int totalTeleport;
+    public float totalFree;
+    public float totalWalk;
 
     public XRNode rightHandNode;
     public InputDevice rightHand;
 
-    public bool first = true;
+    public bool timeEnabled = true;
+    public bool realUser = false;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     void Start()
     {
-        playerId = CreateRandomString();
-
-        actions = new List<LocomotionAction>();
+        if (playerId == null) { 
+            playerId = CreateRandomString();
+        }
 
         rightHand = InputDevices.GetDeviceAtXRNode(rightHandNode);
 
@@ -42,12 +53,9 @@ public class FirebaseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameplayTime += Time.deltaTime;
-
-        if(gameplayTime > 3f && first)
+        if (timeEnabled)
         {
-            StartCoroutine(PushToDatabase("teleport"));
-            first = false;
+            gameplayTime += Time.deltaTime;
         }
     }
 
