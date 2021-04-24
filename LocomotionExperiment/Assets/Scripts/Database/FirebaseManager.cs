@@ -1,8 +1,9 @@
 ﻿using Firebase.Database;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Unity.XR;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR;
 
 public class FirebaseManager : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class FirebaseManager : MonoBehaviour
 
     private static FirebaseManager _instance;
     private DatabaseReference reference;
+
+    public XRNode inputSource;
+    InputDevice device;
+    float snapTime = 0.5f;
 
     public static FirebaseManager Instance
     {
@@ -54,7 +59,6 @@ public class FirebaseManager : MonoBehaviour
 
     public class Scene
     {
-        public string type;
         public float totalTime;
 
         public int totalTeleport;
@@ -66,8 +70,6 @@ public class FirebaseManager : MonoBehaviour
         public float ratioWalk;
         public float ratioFree;
         public float ratioSnap;
-
-        public List<LocomotionAction> actions;
     }
 
     void Start()
@@ -78,29 +80,37 @@ public class FirebaseManager : MonoBehaviour
         totalSnap = 0; 
 
         reference = FirebaseDatabase.DefaultInstance.RootReference;
-        if (playerId == null)
+
+        if (playerId == null || playerId == "")
         {
             playerId = generatePlayerId(realPlayer);
-        }
-
-        if (SceneManager.GetActiveScene().name == "")
-        {
             pushInitalData();
         }
-        else if(SceneManager.GetActiveScene().name == "TTP")
+        
+        if(SceneManager.GetActiveScene().name == "TTP")
         {
             teleportScene = new Scene();
-            teleportScene.actions = new List<LocomotionAction>();
         }
 
         gameTime = 0f;
+
+        device = InputDevices.GetDeviceAtXRNode(inputSource);
     }
 
     private void Update()
     {
-        if(timerEnabled)
+        if (timerEnabled)
         {
             gameTime += Time.deltaTime;
+
+            snapTime -= Time.deltaTime;
+            Vector2 inputAxis;
+            device.TryGetFeatureValue(CommonUsages.primary2DAxis, out inputAxis);
+            if(inputAxis.x != 0 && snapTime < 0f)
+            {
+                addSnapAction();
+                snapTime = 0.5f;
+            }
         }
     }
 
@@ -132,7 +142,7 @@ public class FirebaseManager : MonoBehaviour
         basicData.timestamp = System.DateTime.Now.ToString();
         string json = JsonUtility.ToJson(basicData);
 
-        reference.Child(generatePlayerId(realPlayer)).SetRawJsonValueAsync(json);
+        reference.Child(playerId).SetRawJsonValueAsync(json);
 
         Debug.Log(json);
     }
@@ -155,7 +165,8 @@ public class FirebaseManager : MonoBehaviour
         locomotionAction.type = "teleport";
         locomotionAction.gameTimestamp = gameTime;
 
-        teleportScene.actions.Add(locomotionAction);
+        string json = JsonUtility.ToJson(locomotionAction);
+        reference.Child(playerId).Child("Scenes").Child("Teleport").Child("Actions").Child("TP-" + totalTeleport.ToString()).SetRawJsonValueAsync(json);
 
         totalTeleport++;
     }
@@ -169,7 +180,8 @@ public class FirebaseManager : MonoBehaviour
         locomotionAction.type = "snap";
         locomotionAction.gameTimestamp = gameTime;
 
-        teleportScene.actions.Add(locomotionAction);
+        string json = JsonUtility.ToJson(locomotionAction);
+        reference.Child(playerId).Child("Scenes").Child("Teleport").Child("Actions").Child("SNAP-" + totalSnap.ToString()).SetRawJsonValueAsync(json);
 
         totalSnap++;
     }
@@ -192,7 +204,7 @@ public class FirebaseManager : MonoBehaviour
 
         string json = JsonUtility.ToJson(teleportScene);
 
-        reference.Child(playerId).Child("Scenes").Child("Teleport").SetRawJsonValueAsync(json);
+        reference.Child(playerId).Child("Scenes").Child("Teleport").Child("Totals").SetRawJsonValueAsync(json);
 
         Debug.Log(json);
     }
