@@ -6184,6 +6184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978a8aa903d203745a4a15488ebd52e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputDeviceCharacteristics: 0
+  handModelPrefab: {fileID: 0}
 --- !u!1001 &230087259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20829,6 +20831,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae26e19cd956134bbdf3c6f65bf393a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_UpdateTrackingType: 0
+  m_EnableInputTracking: 1
+  m_EnableInputActions: 1
+  m_ModelPrefab: {fileID: 0}
+  m_ModelTransform: {fileID: 0}
+  m_AnimateModel: 0
+  m_ModelSelectTransition: 
+  m_ModelDeSelectTransition: 
+  m_AnchorControlDeadzone: 0.75
+  m_AnchorControlOffAxisDeadzone: 0.3
+  m_ControllerNode: 5
+  m_SelectUsage: 3
+  m_ActivateUsage: 2
+  m_UIPressUsage: 2
+  m_AxisToPressThreshold: 0.1
+  m_RotateAnchorLeft: 16
+  m_RotateAnchorRight: 17
+  m_MoveObjectIn: 14
+  m_MoveObjectOut: 15
+  m_PoseProvider: {fileID: 0}
 --- !u!114 &845544525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20841,6 +20863,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Device: 0
+  m_PoseSource: 2
+  m_PoseProviderComponent: {fileID: 0}
+  m_TrackingType: 0
+  m_UpdateType: 0
+  m_UseRelativeTransform: 0
 --- !u!1001 &846107361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22163,6 +22191,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae26e19cd956134bbdf3c6f65bf393a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_UpdateTrackingType: 0
+  m_EnableInputTracking: 1
+  m_EnableInputActions: 1
+  m_ModelPrefab: {fileID: 0}
+  m_ModelTransform: {fileID: 0}
+  m_AnimateModel: 0
+  m_ModelSelectTransition: 
+  m_ModelDeSelectTransition: 
+  m_AnchorControlDeadzone: 0.75
+  m_AnchorControlOffAxisDeadzone: 0.3
+  m_ControllerNode: 5
+  m_SelectUsage: 3
+  m_ActivateUsage: 2
+  m_UIPressUsage: 2
+  m_AxisToPressThreshold: 0.1
+  m_RotateAnchorLeft: 16
+  m_RotateAnchorRight: 17
+  m_MoveObjectIn: 14
+  m_MoveObjectOut: 15
+  m_PoseProvider: {fileID: 0}
 --- !u!114 &890188641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22175,6 +22223,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Device: 0
+  m_PoseSource: 2
+  m_PoseProviderComponent: {fileID: 0}
+  m_TrackingType: 0
+  m_UpdateType: 0
+  m_UseRelativeTransform: 0
 --- !u!1001 &892278114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30393,6 +30447,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978a8aa903d203745a4a15488ebd52e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputDeviceCharacteristics: 0
+  handModelPrefab: {fileID: 0}
 --- !u!1001 &1228096971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33464,6 +33520,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2483b9bd782f9449a5972b61b7d51a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_CameraFloorOffsetObject: {fileID: 0}
+  m_RequestedTrackingMode: 0
+  m_TrackingOriginMode: 1
+  m_TrackingSpace: 0
+  m_CameraYOffset: 1.36144
 --- !u!4 &1344769435
 Transform:
   m_ObjectHideFlags: 0
@@ -33491,6 +33552,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4f2c0214c9b494fa7eb5b8b2c02885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_System: {fileID: 0}
+  m_TurnAmount: 45
+  m_DebounceTime: 0.5
+  m_EnableTurnLeftRight: 1
+  m_EnableTurnAround: 1
+  m_TurnUsage: 0
+  m_Controllers: []
+  m_DeadZone: 0.75
 --- !u!114 &1344769437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33503,6 +33572,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b1608ba237c8c4aaa61fc72309d88d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rig: {fileID: 1344769439}
+  gravity: -9.81
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  additionalHeight: 0.2
+  cam: {fileID: 1795798705}
+  rightHandNode: 5
+  leftHandNode: 4
+  speed: 2
+  isMoving: 0
+  movingTime: 0
 --- !u!114 &1344769438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33515,6 +33596,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03a5df2202a8b96488c744be3bd0c33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Timeout: 10
+  m_XRRig: {fileID: 0}
 --- !u!114 &1344769439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33527,6 +33610,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7448815bd5148434682b3d931066cd10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_RigBaseGameObject: {fileID: 1344769433}
+  m_CameraFloorOffsetObject: {fileID: 0}
+  m_CameraGameObject: {fileID: 0}
+  m_TrackingOriginMode: 1
+  m_TrackingSpace: 3
+  m_CameraYOffset: 1.36144
 --- !u!114 &1344769440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33539,6 +33628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017c5e3933235514c9520e1dace2a4b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ActionAssets: []
 --- !u!143 &1344769441
 CharacterController:
   m_ObjectHideFlags: 0
@@ -43837,6 +43927,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Device: 0
+  m_PoseSource: 2
+  m_PoseProviderComponent: {fileID: 0}
+  m_TrackingType: 0
+  m_UpdateType: 0
+  m_UseRelativeTransform: 0
 --- !u!1001 &1797455415
 PrefabInstance:
   m_ObjectHideFlags: 0

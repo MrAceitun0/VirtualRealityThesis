@@ -20,12 +20,39 @@ public class ArmSwing : MonoBehaviour
 
     public float speed = 5f;
 
+    public bool isMoving = false;
+    public float movingTime = 0f;
+
     private void Start()
     {
         character = GetComponent<CharacterController>();
 
         rightHand = InputDevices.GetDeviceAtXRNode(rightHandNode);
         leftHand = InputDevices.GetDeviceAtXRNode(leftHandNode);
+    }
+
+    private void Update()
+    {
+        if (isMoving && movingTime > 0f && FirebaseManager.Instance.timerEnabled == false) //If player is moving until hitting the confetti, save last move
+        {
+            FirebaseManager.Instance.addWalkAction(movingTime);
+            FirebaseManager.Instance.pushSceneInformation();
+            isMoving = false;
+            movingTime = 0f;
+        }
+
+        if (primaryButtonsArePressed() && handsHaveVelocity() && FirebaseManager.Instance.timerEnabled == true)
+        {
+            isMoving = true;
+            movingTime += Time.deltaTime;
+        }
+
+        if ((!primaryButtonsArePressed() || !handsHaveVelocity()) && isMoving && movingTime > 0f)
+        {
+            isMoving = false;
+            FirebaseManager.Instance.addWalkAction(movingTime);
+            movingTime = 0f;
+        }
     }
 
     void FixedUpdate()

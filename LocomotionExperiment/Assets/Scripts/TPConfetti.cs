@@ -19,7 +19,7 @@ public class TPConfetti : MonoBehaviour
             particlesB.gameObject.GetComponent<AudioSource>().Play();
             Destroy(particlesB.gameObject, 2f);
             FirebaseManager.Instance.disableGameTime();
-            FirebaseManager.Instance.pushTeleportInformation();
+            FirebaseManager.Instance.pushSceneInformation();
             first = false;
         }
     }

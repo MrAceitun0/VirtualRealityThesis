@@ -16,6 +16,9 @@ public class ContinousMovement : MonoBehaviour
 
     public float additionalHeight = 0.2f;
 
+    public bool isMoving = false;
+    public float movingTime = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,27 @@ public class ContinousMovement : MonoBehaviour
     {
         InputDevice device = InputDevices.GetDeviceAtXRNode(inputSource);
         device.TryGetFeatureValue(CommonUsages.primary2DAxis, out inputAxis);
+
+        if (isMoving && movingTime > 0f && FirebaseManager.Instance.timerEnabled == false) //If player is moving until hitting the confetti, save last move
+        {
+            FirebaseManager.Instance.addFreeAction(movingTime);
+            FirebaseManager.Instance.pushSceneInformation();
+            isMoving = false;
+            movingTime = 0f;
+        }
+
+        if (inputAxis.magnitude > 0f && FirebaseManager.Instance.timerEnabled == true)
+        {
+            isMoving = true;
+            movingTime += Time.deltaTime;
+        }
+
+        if(inputAxis.magnitude == 0f && isMoving && movingTime > 0f)
+        {
+            isMoving = false;
+            FirebaseManager.Instance.addFreeAction(movingTime);
+            movingTime = 0f;
+        }
     }
 
     private void FixedUpdate()

@@ -12,13 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/TObjects.unity
     guid: 6165587ac122d2748a76c8c88d56d01d
   - enabled: 1
-    path: Assets/Scenes/TTP.unity
+    path: Assets/Scenes/Teleport.unity
     guid: eff2eb07ef0ae9744976c56f973bdf27
   - enabled: 1
-    path: Assets/Scenes/TWalk.unity
+    path: Assets/Scenes/Walk.unity
     guid: 5c390bac400d56448b0cdfbc55c66d0c
   - enabled: 1
-    path: Assets/Scenes/TFree.unity
+    path: Assets/Scenes/Free.unity
     guid: f5e524ed67c37e742b244a5d39d16432
   - enabled: 1
     path: Assets/Scenes/Calm.unity

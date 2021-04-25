@@ -8,12 +8,11 @@ using UnityEngine.XR;
 public class FirebaseManager : MonoBehaviour
 {
     public bool realPlayer = false;
-    public string playerId;
+    public static string playerId;
 
     public bool timerEnabled = false;
     public float gameTime = 0f;
 
-    Scene teleportScene;
     public int totalTeleport;
     public float totalWalk;
     public float totalFree;
@@ -48,13 +47,13 @@ public class FirebaseManager : MonoBehaviour
     {
         public bool realPlayer;
         public string timestamp;
-        public Scene[] scenes;
     }
 
     public class LocomotionAction
     {
         public float gameTimestamp;
         public string type;
+        public float duration;
     }
 
     public class Scene
@@ -81,17 +80,6 @@ public class FirebaseManager : MonoBehaviour
 
         reference = FirebaseDatabase.DefaultInstance.RootReference;
 
-        if (playerId == null || playerId == "")
-        {
-            playerId = generatePlayerId(realPlayer);
-            pushInitalData();
-        }
-        
-        if(SceneManager.GetActiveScene().name == "TTP")
-        {
-            teleportScene = new Scene();
-        }
-
         gameTime = 0f;
 
         device = InputDevices.GetDeviceAtXRNode(inputSource);
@@ -99,6 +87,12 @@ public class FirebaseManager : MonoBehaviour
 
     private void Update()
     {
+        if (playerId == null || playerId == "")
+        {
+            playerId = generatePlayerId(realPlayer);
+            pushInitalData();
+        }
+
         if (timerEnabled)
         {
             gameTime += Time.deltaTime;
@@ -166,46 +160,69 @@ public class FirebaseManager : MonoBehaviour
         locomotionAction.gameTimestamp = gameTime;
 
         string json = JsonUtility.ToJson(locomotionAction);
-        reference.Child(playerId).Child("Scenes").Child("Teleport").Child("Actions").Child("TP-" + totalTeleport.ToString()).SetRawJsonValueAsync(json);
+        reference.Child(playerId).Child("Scenes").Child(SceneManager.GetActiveScene().name).Child("Actions").Child("TP-" + totalTeleport.ToString()).SetRawJsonValueAsync(json);
 
         totalTeleport++;
     }
 
     public void addSnapAction()
     {
-        if (!timerEnabled)
-            return;
-
         LocomotionAction locomotionAction = new LocomotionAction();
         locomotionAction.type = "snap";
         locomotionAction.gameTimestamp = gameTime;
 
         string json = JsonUtility.ToJson(locomotionAction);
-        reference.Child(playerId).Child("Scenes").Child("Teleport").Child("Actions").Child("SNAP-" + totalSnap.ToString()).SetRawJsonValueAsync(json);
+        reference.Child(playerId).Child("Scenes").Child(SceneManager.GetActiveScene().name).Child("Actions").Child("SNAP-" + totalSnap.ToString()).SetRawJsonValueAsync(json);
 
         totalSnap++;
     }
 
-    public void pushTeleportInformation()
+    public void addFreeAction(float duration)
     {
-        teleportScene.totalTime = gameTime;
+        LocomotionAction locomotionAction = new LocomotionAction();
+        locomotionAction.type = "free";
+        locomotionAction.gameTimestamp = gameTime;
+        locomotionAction.duration = duration;
 
-        teleportScene.totalTeleport = totalTeleport;
-        teleportScene.ratioTeleport = (totalTeleport * 60) / gameTime;
+        string json = JsonUtility.ToJson(locomotionAction);
+        reference.Child(playerId).Child("Scenes").Child(SceneManager.GetActiveScene().name).Child("Actions").Child("FREE-" + totalFree.ToString()).SetRawJsonValueAsync(json);
 
-        teleportScene.totalSnap = totalSnap;
-        teleportScene.ratioSnap = (totalSnap * 60) / gameTime;
+        totalFree += duration;
+    }
 
-        teleportScene.totalWalk = 0f;
-        teleportScene.ratioWalk = 0f;
+    public void addWalkAction(float duration)
+    {
+        LocomotionAction locomotionAction = new LocomotionAction();
+        locomotionAction.type = "free";
+        locomotionAction.gameTimestamp = gameTime;
 
-        teleportScene.totalFree = 0f;
-        teleportScene.ratioFree = 0f;
+        locomotionAction.duration = duration;
 
-        string json = JsonUtility.ToJson(teleportScene);
+        string json = JsonUtility.ToJson(locomotionAction);
+        reference.Child(playerId).Child("Scenes").Child(SceneManager.GetActiveScene().name).Child("Actions").Child("WALK-" + totalWalk.ToString()).SetRawJsonValueAsync(json);
 
-        reference.Child(playerId).Child("Scenes").Child("Teleport").Child("Totals").SetRawJsonValueAsync(json);
+        totalWalk += duration;
+    }
 
-        Debug.Log(json);
+    public void pushSceneInformation()
+    {
+        Scene scene = new Scene();
+
+        scene.totalTime = gameTime;
+
+        scene.totalTeleport = totalTeleport;
+        scene.ratioTeleport = (totalTeleport * 60) / gameTime;
+
+        scene.totalSnap = totalSnap;
+        scene.ratioSnap = (totalSnap * 60) / gameTime;
+
+        scene.totalWalk = totalWalk;
+        scene.ratioWalk = (totalWalk * 60) / gameTime;
+
+        scene.totalFree = totalFree;
+        scene.ratioFree = (totalFree * 60) / gameTime;
+
+        string json = JsonUtility.ToJson(scene);
+        reference.Child(playerId).Child("Scenes").Child(SceneManager.GetActiveScene().name).Child("Totals").SetRawJsonValueAsync(json);
     }
 }

@@ -45,3 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   realPlayer: 0
   playerId: 
+  timerEnabled: 0
+  gameTime: 0
+  totalTeleport: 0
+  totalWalk: 0
+  totalFree: 0
+  totalSnap: 0
+  inputSource: 5
