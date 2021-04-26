@@ -134,7 +134,7 @@ public class FirebaseManager : MonoBehaviour
 
     public static void PostBasicData(BasicData user, string userId)
     {
-        Proyecto26.RestClient.Put<BasicData>($"{databaseURL}users/{userId}.json", user);
+        Proyecto26.RestClient.Put<BasicData>($"{databaseURL}players/{userId}.json", user);
     }
 
     public void pushInitalData()
@@ -143,11 +143,6 @@ public class FirebaseManager : MonoBehaviour
         basicData.realPlayer = realPlayer;
         basicData.timestamp = System.DateTime.Now.ToString();
         PostBasicData(basicData, playerId);
-        //string json = JsonUtility.ToJson(basicData);
-
-        //reference.Child(playerId).SetRawJsonValueAsync(json);
-
-        //Debug.Log(json);
     }
 
     public void enableGameTime()
@@ -164,52 +159,21 @@ public class FirebaseManager : MonoBehaviour
     {   if (!timerEnabled)
             return;
 
-        LocomotionAction locomotionAction = new LocomotionAction();
-        locomotionAction.type = "teleport";
-        locomotionAction.gameTimestamp = gameTime;
-
-        string json = JsonUtility.ToJson(locomotionAction);
-        reference.Child(playerId).Child("Scenes").Child(SceneManager.GetActiveScene().name).Child("Actions").Child("TP-" + totalTeleport.ToString()).SetRawJsonValueAsync(json);
-
         totalTeleport++;
     }
 
     public void addSnapAction()
     {
-        LocomotionAction locomotionAction = new LocomotionAction();
-        locomotionAction.type = "snap";
-        locomotionAction.gameTimestamp = gameTime;
-
-        string json = JsonUtility.ToJson(locomotionAction);
-        reference.Child(playerId).Child("Scenes").Child(SceneManager.GetActiveScene().name).Child("Actions").Child("SNAP-" + totalSnap.ToString()).SetRawJsonValueAsync(json);
-
         totalSnap++;
     }
 
     public void addFreeAction(float duration)
     {
-        LocomotionAction locomotionAction = new LocomotionAction();
-        locomotionAction.type = "free";
-        locomotionAction.gameTimestamp = gameTime;
-        locomotionAction.duration = duration;
-
-        string json = JsonUtility.ToJson(locomotionAction);
-        reference.Child(playerId).Child("Scenes").Child(SceneManager.GetActiveScene().name).Child("Actions").Child("FREE-" + totalFree.ToString()).SetRawJsonValueAsync(json);
-
         totalFree += duration;
     }
 
     public void addWalkAction(float duration)
     {
-        LocomotionAction locomotionAction = new LocomotionAction();
-        locomotionAction.type = "free";
-        locomotionAction.gameTimestamp = gameTime;
-
-        locomotionAction.duration = duration;
-
-        string json = JsonUtility.ToJson(locomotionAction);
-        reference.Child(playerId).Child("Scenes").Child(SceneManager.GetActiveScene().name).Child("Actions").Child("WALK-" + totalWalk.ToString()).SetRawJsonValueAsync(json);
-
         totalWalk += duration;
     }
 
@@ -231,7 +195,11 @@ public class FirebaseManager : MonoBehaviour
         scene.totalFree = totalFree;
         scene.ratioFree = (totalFree * 60) / gameTime;
 
-        string json = JsonUtility.ToJson(scene);
-        reference.Child(playerId).Child("Scenes").Child(SceneManager.GetActiveScene().name).Child("Totals").SetRawJsonValueAsync(json);
+        PostSceneData(scene, playerId);
+    }
+
+    public static void PostSceneData(Scene scene, string userId)
+    {
+        Proyecto26.RestClient.Put<BasicData>($"{databaseURL}players/{userId}/Scenes/{SceneManager.GetActiveScene().name}/totals.json", scene);
     }
 }

@@ -9,7 +9,7 @@ public class TPConfetti : MonoBehaviour
     bool first = true;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(first && transform.position.z > 30.5f && transform.position.x > 3.5f && transform.position.x < 8f){
             particlesA.Play();

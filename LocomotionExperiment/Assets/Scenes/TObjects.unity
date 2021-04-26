@@ -14883,7 +14883,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 464578, guid: 07f3ba5af59bebf478b31c97a5d04cfb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.684
+      value: 8.695
       objectReference: {fileID: 0}
     - target: {fileID: 464578, guid: 07f3ba5af59bebf478b31c97a5d04cfb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20949,7 +20949,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Coger la cruz para ir al siguiente tutorial '
+  m_Text: 'Coge la cruz para ir al siguiente tutorial '
 --- !u!222 &662135177
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32305,7 +32305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 464578, guid: 07f3ba5af59bebf478b31c97a5d04cfb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.623
+      value: 8.629
       objectReference: {fileID: 0}
     - target: {fileID: 464578, guid: 07f3ba5af59bebf478b31c97a5d04cfb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34777,11 +34777,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 464578, guid: 07f3ba5af59bebf478b31c97a5d04cfb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.627
+      value: 8.63
       objectReference: {fileID: 0}
     - target: {fileID: 464578, guid: 07f3ba5af59bebf478b31c97a5d04cfb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 184.82994
+      value: 184.92
       objectReference: {fileID: 0}
     - target: {fileID: 464578, guid: 07f3ba5af59bebf478b31c97a5d04cfb, type: 3}
       propertyPath: m_LocalRotation.w
