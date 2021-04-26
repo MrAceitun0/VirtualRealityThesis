@@ -19,11 +19,6 @@ public class FirebaseManager : MonoBehaviour
     public int totalSnap;
 
     private static FirebaseManager _instance;
-    private DatabaseReference reference;
-
-    public XRNode inputSource;
-    InputDevice device;
-    float snapTime = 0.5f;
 
     private const string projectId = "vrthesisdb"; // You can find this in your Firebase project settings
     private static readonly string databaseURL = $"https://vrthesisdb-default-rtdb.europe-west1.firebasedatabase.app/";
@@ -81,11 +76,7 @@ public class FirebaseManager : MonoBehaviour
         totalFree = 0f;
         totalSnap = 0; 
 
-        reference = FirebaseDatabase.DefaultInstance.RootReference;
-
         gameTime = 0f;
-
-        device = InputDevices.GetDeviceAtXRNode(inputSource);
     }
 
     private void Update()
@@ -99,15 +90,6 @@ public class FirebaseManager : MonoBehaviour
         if (timerEnabled)
         {
             gameTime += Time.deltaTime;
-
-            snapTime -= Time.deltaTime;
-            Vector2 inputAxis;
-            device.TryGetFeatureValue(CommonUsages.primary2DAxis, out inputAxis);
-            if(inputAxis.x != 0 && snapTime < 0f)
-            {
-                addSnapAction();
-                snapTime = 0.5f;
-            }
         }
     }
 

@@ -7273,6 +7273,7 @@ GameObject:
   - component: {fileID: 1344769442}
   - component: {fileID: 1344769443}
   - component: {fileID: 1344769444}
+  - component: {fileID: 1344769445}
   m_Layer: 0
   m_Name: XRRig
   m_TagString: Untagged
@@ -7355,6 +7356,7 @@ MonoBehaviour:
   additionalHeight: 0.2
   isMoving: 0
   movingTime: 0
+  armSwing: {fileID: 0}
 --- !u!114 &1344769438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7451,6 +7453,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf794f9b862d144e87536c537978ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1344769445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344769433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84006467c9860a3438efe9c18af8760a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputSource: 5
 --- !u!1001 &1358408051
 PrefabInstance:
   m_ObjectHideFlags: 0

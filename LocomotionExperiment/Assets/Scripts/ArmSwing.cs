@@ -23,6 +23,8 @@ public class ArmSwing : MonoBehaviour
     public bool isMoving = false;
     public float movingTime = 0f;
 
+    public ContinousMovement continousMovement;
+
     private void Start()
     {
         character = GetComponent<CharacterController>();
@@ -64,6 +66,9 @@ public class ArmSwing : MonoBehaviour
             && Time.timeSinceLevelLoad > 1f
             && handsHaveVelocity())
         {
+            if(continousMovement != null)
+                continousMovement.enabled = false;
+
             CapsuleFollowHeadSet();
 
             character.Move(cam.transform.forward * speed * Time.fixedDeltaTime);
@@ -79,6 +84,9 @@ public class ArmSwing : MonoBehaviour
 
             character.Move(Vector3.up * fallingSpeed * Time.fixedDeltaTime);
         }
+
+        if (continousMovement != null)
+            continousMovement.enabled = true;
     }
 
     private void CapsuleFollowHeadSet()

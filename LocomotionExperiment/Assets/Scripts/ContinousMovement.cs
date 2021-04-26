@@ -19,6 +19,8 @@ public class ContinousMovement : MonoBehaviour
     public bool isMoving = false;
     public float movingTime = 0f;
 
+    public ArmSwing armSwing;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,18 @@ public class ContinousMovement : MonoBehaviour
     {
         InputDevice device = InputDevices.GetDeviceAtXRNode(inputSource);
         device.TryGetFeatureValue(CommonUsages.primary2DAxis, out inputAxis);
+
+        if (armSwing != null)
+        {
+            if (inputAxis.magnitude != 0f)
+            {
+                armSwing.enabled = false;
+            }
+            else
+            {
+                armSwing.enabled = true;
+            }
+        }
 
         if (isMoving && movingTime > 0f && FirebaseManager.Instance.timerEnabled == false) //If player is moving until hitting the confetti, save last move
         {
