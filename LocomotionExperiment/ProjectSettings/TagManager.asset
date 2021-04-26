@@ -11,6 +11,7 @@ TagManager:
   - Start
   - End
   - Confetti
+  - Altar
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class LocomotionController : MonoBehaviour
     public XRController rightTeleportRay;
     public InputHelpers.Button activationButton;
     public float activationThreshold = 0.1f;
+    public GameObject reticle;
 
     public bool enableRightTP { get; set; } = true;
 
@@ -16,7 +17,9 @@ public class LocomotionController : MonoBehaviour
     {
         if(rightTeleportRay && enableRightTP)
         {
+
             rightTeleportRay.gameObject.SetActive(CheckIfActivated(rightTeleportRay));
+            reticle.SetActive(CheckIfActivated(rightTeleportRay));
         }
     }
 

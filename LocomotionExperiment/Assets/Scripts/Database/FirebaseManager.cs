@@ -25,6 +25,9 @@ public class FirebaseManager : MonoBehaviour
     InputDevice device;
     float snapTime = 0.5f;
 
+    private const string projectId = "vrthesisdb"; // You can find this in your Firebase project settings
+    private static readonly string databaseURL = $"https://vrthesisdb-default-rtdb.europe-west1.firebasedatabase.app/";
+
     public static FirebaseManager Instance
     {
         get
@@ -129,16 +132,22 @@ public class FirebaseManager : MonoBehaviour
         return code;
     }
 
+    public static void PostBasicData(BasicData user, string userId)
+    {
+        Proyecto26.RestClient.Put<BasicData>($"{databaseURL}users/{userId}.json", user);
+    }
+
     public void pushInitalData()
     {
         BasicData basicData = new BasicData();
         basicData.realPlayer = realPlayer;
         basicData.timestamp = System.DateTime.Now.ToString();
-        string json = JsonUtility.ToJson(basicData);
+        PostBasicData(basicData, playerId);
+        //string json = JsonUtility.ToJson(basicData);
 
-        reference.Child(playerId).SetRawJsonValueAsync(json);
+        //reference.Child(playerId).SetRawJsonValueAsync(json);
 
-        Debug.Log(json);
+        //Debug.Log(json);
     }
 
     public void enableGameTime()
