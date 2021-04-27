@@ -16,6 +16,10 @@ TagManager:
   - Beer
   - Skeleton
   - Cup
+  - Carretilla
+  - Escudero
+  - Guerrero
+  - Tools
   layers:
   - Default
   - TransparentFX

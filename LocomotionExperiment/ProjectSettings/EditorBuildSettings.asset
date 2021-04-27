@@ -25,7 +25,7 @@ EditorBuildSettings:
     guid: 14b243b32c86c8e458410aac8afe5bf0
   - enabled: 1
     path: Assets/Scenes/Stress.unity
-    guid: 4dcc0669b04f9f54dbdd0755ff55619c
+    guid: 1af53ec791dd07948ab6b8af1233ad88
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
