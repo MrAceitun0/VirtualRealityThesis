@@ -18,7 +18,7 @@ public class BagController : MonoBehaviour
         opaqueName = opaqueMat.name;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (objRenderer.material.name.Contains(opaqueName))
         {
@@ -27,10 +27,10 @@ public class BagController : MonoBehaviour
 
         if (other.tag == "Carretilla" && !this.GetComponent<UnityEngine.XR.Interaction.Toolkit.XRGrabInteractable>().isSelected)
         {
-            objRenderer.material = opaqueMat;
-            Destroy(this.gameObject);
-            //CalmScenePacer.Instance.stage++;
+            StressScenePacer.Instance.stage = 5;
             src.PlayOneShot(coinSound);
+            objRenderer.material = opaqueMat;
+            this.gameObject.SetActive(false);
         }
     }
 }

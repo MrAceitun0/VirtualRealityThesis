@@ -20,6 +20,10 @@ TagManager:
   - Escudero
   - Guerrero
   - Tools
+  - Sierra
+  - Saco
+  - Escudo
+  - Hacha
   layers:
   - Default
   - TransparentFX

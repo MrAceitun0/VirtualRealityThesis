@@ -18,7 +18,7 @@ public class ShieldController : MonoBehaviour
         opaqueName = opaqueMat.name;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (objRenderer.material.name.Contains(opaqueName))
         {
@@ -27,10 +27,10 @@ public class ShieldController : MonoBehaviour
 
         if (other.tag == "Escudero" && !this.GetComponent<UnityEngine.XR.Interaction.Toolkit.XRGrabInteractable>().isSelected)
         {
-            objRenderer.material = opaqueMat;
-            Destroy(this.gameObject);
-            //CalmScenePacer.Instance.stage++;
+            StressScenePacer.Instance.stage = 3;
             src.PlayOneShot(coinSound);
+            objRenderer.material = opaqueMat;
+            this.gameObject.SetActive(false);
         }
     }
 }

@@ -28,9 +28,9 @@ public class CalmObject : MonoBehaviour
         if (other.tag == "Altar" && !this.GetComponent<UnityEngine.XR.Interaction.Toolkit.XRGrabInteractable>().isSelected)
         {
             objRenderer.material = opaqueMat;
-            Destroy(this.gameObject);
             CalmScenePacer.Instance.stage++;
             src.PlayOneShot(coinSound);
+            this.gameObject.SetActive(false);
         }
     }
 }
