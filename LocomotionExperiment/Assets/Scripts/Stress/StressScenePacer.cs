@@ -268,6 +268,10 @@ public class StressScenePacer : MonoBehaviour
             timeName.enabled = true;
             timer.enabled = true;
         }
+        else if (stage == 6 && handsOverHead())
+        {
+            SceneManager.LoadScene("Info");
+        }
     }
 
     private bool handsOverHead()

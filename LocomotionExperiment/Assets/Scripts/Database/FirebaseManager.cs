@@ -23,6 +23,12 @@ public class FirebaseManager : MonoBehaviour
     private const string projectId = "vrthesisdb"; // You can find this in your Firebase project settings
     private static readonly string databaseURL = $"https://vrthesisdb-default-rtdb.europe-west1.firebasedatabase.app/";
 
+    public string teleportInfo;
+    public string walkInfo;
+    public string freeInfo;
+    public string calmInfo;
+    public string stressInfo;
+
     public static FirebaseManager Instance
     {
         get
@@ -178,6 +184,25 @@ public class FirebaseManager : MonoBehaviour
         scene.ratioFree = (totalFree * 60) / gameTime;
 
         PostSceneData(scene, playerId);
+
+        switch(SceneManager.GetActiveScene().name)
+        {
+            case "Teleport":
+                teleportInfo = "Tt" + gameTime + "tp" + totalTeleport + "s" + totalSnap + "w" + totalWalk + "f" + totalFree;
+                break;
+            case "Walk":
+                walkInfo = "Wt" + gameTime + "tp" + totalTeleport + "s" + totalSnap + "w" + totalWalk + "f" + totalFree;
+                break;
+            case "Free":
+                freeInfo = "Ft" + gameTime + "tp" + totalTeleport + "s" + totalSnap + "w" + totalWalk + "f" + totalFree;
+                break;
+            case "Calm":
+                calmInfo = "Ct" + gameTime + "tp" + totalTeleport + "s" + totalSnap + "w" + totalWalk + "f" + totalFree;
+                break;
+            case "Stress":
+                stressInfo = "St" + gameTime + "tp" + totalTeleport + "s" + totalSnap + "w" + totalWalk + "f" + totalFree;
+                break;
+        }
     }
 
     public static void PostSceneData(Scene scene, string userId)

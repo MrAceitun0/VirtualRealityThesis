@@ -83,9 +83,8 @@ public class ArmSwing : MonoBehaviour
             }
 
             character.Move(Vector3.up * fallingSpeed * Time.fixedDeltaTime);
-        }
-
-        if (continousMovement != null)
+        } 
+        else if (continousMovement != null)
             continousMovement.enabled = true;
     }
 

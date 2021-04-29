@@ -7,7 +7,7 @@ public class SnapRecorder : MonoBehaviour
 {
     public XRNode inputSource;
     InputDevice device;
-    float snapTime = 0.5f;
+    float snapTime = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -16,17 +16,17 @@ public class SnapRecorder : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (FirebaseManager.Instance.timerEnabled)
         {
             snapTime -= Time.fixedDeltaTime;
             Vector2 inputAxis;
             device.TryGetFeatureValue(CommonUsages.primary2DAxis, out inputAxis);
-            if (inputAxis.x != 0 && snapTime < 0f)
+            if ((inputAxis.x < -0.75f || inputAxis.x > 0.75f) && snapTime < 0f)
             {
                 FirebaseManager.Instance.addSnapAction();
-                snapTime = 0.5f;
+                snapTime = 0.51f;
             }
         }
     }

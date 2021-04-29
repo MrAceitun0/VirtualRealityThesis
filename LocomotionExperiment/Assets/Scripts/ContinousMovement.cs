@@ -35,7 +35,7 @@ public class ContinousMovement : MonoBehaviour
 
         if (armSwing != null)
         {
-            if (inputAxis.magnitude != 0f)
+            if (inputAxis.magnitude > 0.1f)
             {
                 armSwing.enabled = false;
             }
@@ -45,21 +45,13 @@ public class ContinousMovement : MonoBehaviour
             }
         }
 
-        if (isMoving && movingTime > 0f && FirebaseManager.Instance.timerEnabled == false) //If player is moving until hitting the confetti, save last move
-        {
-            FirebaseManager.Instance.addFreeAction(movingTime);
-            FirebaseManager.Instance.pushSceneInformation();
-            isMoving = false;
-            movingTime = 0f;
-        }
-
-        if (inputAxis.magnitude > 0f && FirebaseManager.Instance.timerEnabled == true)
+        if (inputAxis.magnitude > 0.1f && FirebaseManager.Instance.timerEnabled == true)
         {
             isMoving = true;
             movingTime += Time.deltaTime;
         }
 
-        if(inputAxis.magnitude == 0f && isMoving && movingTime > 0f)
+        if(inputAxis.magnitude > 0.1f && isMoving && movingTime > 0f)
         {
             isMoving = false;
             FirebaseManager.Instance.addFreeAction(movingTime);
