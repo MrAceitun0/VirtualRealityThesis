@@ -105,13 +105,6 @@ public class StressScenePacer : MonoBehaviour
             escudo.enabled = true;
             hacha.enabled = true;
 
-            gold.enabled = true;
-            silver.enabled = true;
-            bronze.enabled = true;
-            goldName.enabled = true;
-            silverName.enabled = true;
-            bronzeName.enabled = true;
-
             timeName.enabled = true;
             timer.enabled = true;
         }
@@ -244,18 +237,18 @@ public class StressScenePacer : MonoBehaviour
 
             gold.enabled = false;
             silver.enabled = true;
-            if(Mathf.FloorToInt(FirebaseManager.Instance.gameTime) <= 90)
+            if(Mathf.FloorToInt(FirebaseManager.Instance.gameTime) <= 120)
             {
                 silver.sprite = goldSprite;
                 end.text = "Enhorabuena, has conseguido la medalla de oro.\nMuchas gracias por jugar la demo.";
             } 
-            else if (Mathf.FloorToInt(FirebaseManager.Instance.gameTime) > 90
-                && Mathf.FloorToInt(FirebaseManager.Instance.gameTime) <= 180)
+            else if (Mathf.FloorToInt(FirebaseManager.Instance.gameTime) > 120
+                && Mathf.FloorToInt(FirebaseManager.Instance.gameTime) <= 240)
             {
                 silver.sprite = silverSprite;
                 end.text = "Enhorabuena, has conseguido la medalla de plata.\nMuchas gracias por jugar la demo.";
             } 
-            else if (FirebaseManager.Instance.gameTime > 180)
+            else if (FirebaseManager.Instance.gameTime > 240)
             {
                 silver.sprite = bronzeSprite;
                 end.text = "Enhorabuena, has conseguido la medalla de bronze.\nMuchas gracias por jugar la demo.";
