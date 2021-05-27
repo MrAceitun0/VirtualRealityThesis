@@ -219,9 +219,17 @@ PrefabInstance:
     - target: {fileID: 3301023401141883774, guid: 7fd86031a57c2094ca1da34f5033104e,
         type: 3}
       propertyPath: m_Text
-      value: "Lleva nuestra ofrenda al dios Njord.\n\nEs costumbre traer comida,
-        bebida, tesoros y a nuestros enemigos, o lo que queda de ellos. \n\nLevanta
-        los brazos para empezar."
+      value: 'Take our offering to the god Njord.
+
+        
+
+        It is a tradition
+        to bring food, drink, treasure and our enemies, or what is left of them.
+
+        
+
+        Raise
+        your hands to start.'
       objectReference: {fileID: 0}
     - target: {fileID: 3301023401141883774, guid: 7fd86031a57c2094ca1da34f5033104e,
         type: 3}
@@ -16546,7 +16554,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PESCADO
+  m_Text: FISH
 --- !u!222 &594526245
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24173,7 +24181,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CALIZ
+  m_Text: CHALICE
 --- !u!222 &849201043
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33109,7 +33117,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CERVEZA
+  m_Text: BEER
 --- !u!222 &1165415691
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -50637,11 +50645,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Los dioses nos han bendecido para la batalla, bien hecho vikingo.
+  m_Text: 'Gods have blessed us for battle, well done Viking.
 
+    
 
-    Levanta
-    los brazos para ir a la siguiente escena.'
+    Raise
+    your hands to go to the next scene.'
 --- !u!222 &1805439418
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -52452,7 +52461,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CALAVERA
+  m_Text: SKULL
 --- !u!222 &1900030285
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -52872,7 +52881,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Trae las ofrendas al altar
+  m_Text: "\rBring the offerings to the altar"
 --- !u!222 &1916134064
 CanvasRenderer:
   m_ObjectHideFlags: 0

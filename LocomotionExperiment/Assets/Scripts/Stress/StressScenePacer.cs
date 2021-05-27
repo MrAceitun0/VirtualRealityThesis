@@ -79,15 +79,15 @@ public class StressScenePacer : MonoBehaviour
         int seconds = Mathf.FloorToInt(totalTime - minutes * 60);
         if(minutes == 1)
         {
-            timer.text = minutes + " minuto\n" + seconds + " segundos"; 
+            timer.text = minutes + " minute\n" + seconds + " seconds"; 
         }
         else if (minutes >= 2)
         {
-            timer.text = minutes + " minutos\n" + seconds + " segundos";
+            timer.text = minutes + " minutes\n" + seconds + " seconds";
         }
         else
         {
-            timer.text = seconds + " segundos";
+            timer.text = seconds + " seconds";
         }
 
 
@@ -240,18 +240,18 @@ public class StressScenePacer : MonoBehaviour
             if(Mathf.FloorToInt(FirebaseManager.Instance.gameTime) <= 120)
             {
                 silver.sprite = goldSprite;
-                end.text = "Enhorabuena, has conseguido la medalla de oro.\nMuchas gracias por jugar la demo.";
+                end.text = "Congratulations, you have obtained the gold medal.\nThank you so much for playing.";
             } 
             else if (Mathf.FloorToInt(FirebaseManager.Instance.gameTime) > 120
                 && Mathf.FloorToInt(FirebaseManager.Instance.gameTime) <= 240)
             {
                 silver.sprite = silverSprite;
-                end.text = "Enhorabuena, has conseguido la medalla de plata.\nMuchas gracias por jugar la demo.";
+                end.text = "Congratulations, you have obtained the silver medal.\nThank you so much for playing.";
             } 
             else if (FirebaseManager.Instance.gameTime > 240)
             {
                 silver.sprite = bronzeSprite;
-                end.text = "Enhorabuena, has conseguido la medalla de bronze.\nMuchas gracias por jugar la demo.";
+                end.text = "Congratulations, you have obtained the bronze medal.\nThank you so much for playing.";
             }
             bronze.enabled = false;
             goldName.enabled = false;

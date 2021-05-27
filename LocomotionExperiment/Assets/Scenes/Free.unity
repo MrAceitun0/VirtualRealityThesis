@@ -10775,7 +10775,7 @@ PrefabInstance:
     - target: {fileID: 3301023401141883774, guid: 7fd86031a57c2094ca1da34f5033104e,
         type: 3}
       propertyPath: m_Text
-      value: Coge la cruz para avanzar
+      value: Touch the cross to go to the next tutorial
       objectReference: {fileID: 0}
     - target: {fileID: 3301023402208098405, guid: 7fd86031a57c2094ca1da34f5033104e,
         type: 3}

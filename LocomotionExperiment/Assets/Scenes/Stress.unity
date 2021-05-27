@@ -219,15 +219,17 @@ PrefabInstance:
     - target: {fileID: 3301023401141883774, guid: 7fd86031a57c2094ca1da34f5033104e,
         type: 3}
       propertyPath: m_Text
-      value: 'A la batalla vikingos.
+      value: 'Vikings to battle.
 
+        
 
-        Corre, trae armas, herramientas y
-        tus objetos personales y recuerda que cada segundo cuenta.
+        Run, bring weapons, tools and
+        your personal belongings and remember that every second counts.
 
+        
 
-        Levanta
-        los brazos para empezar.'
+        Raise
+        your hands to start.'
       objectReference: {fileID: 0}
     - target: {fileID: 3301023401141883774, guid: 7fd86031a57c2094ca1da34f5033104e,
         type: 3}
@@ -16262,7 +16264,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SACO PERSONAL
+  m_Text: PERSONAL BAG
 --- !u!222 &594526245
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27100,7 +27102,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HACHA DE GUERRA
+  m_Text: HATCHET
 --- !u!222 &849201043
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33000,9 +33002,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Menos de 2
-
-    minutos'
+  m_Text: "Less than \n2 minutes"
 --- !u!222 &1050889655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35311,9 +35311,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Menos de 4
-
-    minutos'
+  m_Text: "Less than \n4 minutes"
 --- !u!222 &1133771347
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36339,7 +36337,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SIERRA
+  m_Text: SAW
 --- !u!222 &1165415691
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -48105,9 +48103,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Mas de 4
-
-    minutos'
+  m_Text: "More than \n4 minutes"
 --- !u!222 &1591422632
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -59490,7 +59486,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ESCUDO
+  m_Text: SHIELD
 --- !u!222 &1900030285
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -59910,7 +59906,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Ayuda a nuestros guerreros a estar listos para la batalla
+  m_Text: Help our vikings to get ready for the battle
 --- !u!222 &1916134064
 CanvasRenderer:
   m_ObjectHideFlags: 0

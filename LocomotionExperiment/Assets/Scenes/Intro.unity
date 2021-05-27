@@ -23312,7 +23312,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LEVANTA LOS BRAZOS PARA EMPEZAR A JUGAR
+  m_Text: RAISE YOUR HANDS TO START
 --- !u!222 &979239688
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32585,7 +32585,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344769433}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4287842f1516b4ddf820dc918ed208ad, type: 3}
@@ -32684,7 +32684,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8a109a7d16c775244b5906eb18993271, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bd9cfef3280d6a94387a0be8d00bc425, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -35072,7 +35072,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: LA VIDA DEL VIKINGO
+  m_Text: THE LIFE OF A VIKING
 --- !u!222 &1430930582
 CanvasRenderer:
   m_ObjectHideFlags: 0
