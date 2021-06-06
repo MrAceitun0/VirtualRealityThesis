@@ -12,4 +12,4 @@ Controls:
 * Snapping: right joystick
 * Reset scene: Select button
 
-Finally, this is the link to the [Bachelor's Thesis]().
+In the repository, it can also be found the Bachelor's Thesis in the Thesis folder with all the research project. 
